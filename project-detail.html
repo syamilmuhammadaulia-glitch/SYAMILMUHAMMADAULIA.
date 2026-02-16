@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Detail | Syamil Muhammad Aulia</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      /* Style khusus halaman detail */
+      .detail-wrapper {
+        padding: 12rem 9% 5rem;
+        min-height: 100vh;
+      }
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--main-color);
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+        transition: 0.3s;
+        font-weight: 600;
+      }
+      .back-btn:hover {
+        transform: translateX(-5px);
+        color: white;
+      }
+      .detail-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: start;
+      }
+      .detail-img img {
+        width: 100%;
+        border-radius: 2rem;
+        border: 2px solid var(--main-color);
+        box-shadow: 0 0 25px rgba(183, 75, 75, 0.3);
+        transition: 0.4s;
+      }
+      .detail-img img:hover {
+        transform: scale(1.02);
+      }
+      .tech-stack {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        margin-top: 2.5rem;
+      }
+      .tech-badge {
+        background: rgba(183, 75, 75, 0.1);
+        border: 1px solid var(--main-color);
+        padding: 0.6rem 1.8rem;
+        border-radius: 5rem;
+        font-size: 1.2rem;
+        color: white;
+      }
+      .feature-list {
+        background: var(--second-bg-color);
+        padding: 3rem;
+        border-radius: 2rem;
+        margin-top: 3rem;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .feature-list h3 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .feature-list ul {
+        list-style: none;
+      }
+      .feature-list li {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: #ccc;
+        display: flex;
+        align-items: flex-start;
+        gap: 1.2rem;
+        line-height: 1.5;
+      }
+      .feature-list i {
+        color: var(--main-color);
+        margin-top: 0.3rem;
+      }
+      .btn-group {
+        display: flex;
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      /* Responsive Layout */
+      @media (max-width: 991px) {
+        .detail-container {
+          grid-template-columns: 1fr;
+          gap: 4rem;
+        }
+        .detail-info h1 {
+          font-size: 3.5rem !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-transition"></div>
+
+    <header>
+      <a href="index.html" class="logo">SYAMIL</a>
+      <i class="fa-solid fa-bars" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#services">Service</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="projects.html" class="active">Projects</a>
+      </nav>
+    </header>
+
+    <div class="detail-wrapper">
+      <a href="projects.html" class="back-btn" data-aos="fade-right">
+        <i class="fa-solid fa-arrow-left"></i> Kembali ke Daftar Proyek
+      </a>
+
+      <div class="detail-container">
+        <div class="detail-info" data-aos="fade-up" data-aos-delay="200">
+          <h1
+            id="proj-title"
+            style="
+              font-size: 4.8rem;
+              line-height: 1.1;
+              color: var(--main-color);
+            "
+          >
+            Memuat Judul...
+          </h1>
+          <p
+            id="proj-desc"
+            style="
+              font-size: 1.7rem;
+              margin: 3rem 0;
+              line-height: 1.8;
+              color: #eee;
+              text-align: justify;
+            "
+          ></p>
+
+          <div class="btn-group">
+            <a href="#" id="proj-live" target="_blank" class="btn">Live Demo</a>
+            <a href="#" id="proj-repo" target="_blank" class="btn-outline"
+              >Lihat Github</a
+            >
+          </div>
+
+          <h3
+            style="
+              margin-top: 4rem;
+              font-size: 2rem;
+              border-bottom: 2px solid var(--main-color);
+              display: inline-block;
+              padding-bottom: 0.5rem;
+            "
+          >
+            Technologies Used
+          </h3>
+          <div id="proj-tech" class="tech-stack"></div>
+        </div>
+
+        <div class="detail-content" data-aos="fade-left" data-aos-delay="400">
+          <div class="detail-img">
+            <img id="proj-img" src="" alt="Preview Project" />
+          </div>
+          <div class="feature-list">
+            <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Fitur Utama</h3>
+            <ul id="proj-features"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const projectData = {
+        bpi: {
+          title: "Profil Organisasi BPI",
+          desc: "Website resmi Profil BPI. Komunitas belajar di bawah naungan JSIT yang berkomitmen mempererat tali ukhuwah serta membentuk karakter islami melalui lingkaran kebaikan yang inspiratif bagi para pemuda.",
+          img: "project1.png",
+          tech: ["HTML5", "CSS3", "JavaScript", "AOS Library", "Firebase"],
+          features: [
+            "Tampilan Hero Dinamis dengan animasi modern",
+            "Halaman Struktur Organisasi yang interaktif",
+            "Sistem Manajemen Jadwal Pertemuan",
+            "Formulir Absensi dan Pelaporan otomatis",
+          ],
+          live: "http://bpiishoman.netlify.app/",
+          repo: "#",
+        },
+        bpi2: {
+          title: "BPI (Cerdas Ramah Tampan)",
+          desc: "Varian website Profil BPI dengan tema Cerdas, Ramah, Tampan. Mengedepankan visual yang bersih dan navigasi yang sangat intuitif untuk audiens milenial.",
+          img: "projectA1.png",
+          tech: ["HTML", "CSS", "JavaScript", "AOS Library"],
+          features: [
+            "Layout Responsif untuk semua perangkat",
+            "Animasi On-Scroll yang halus",
+            "Navigasi Satu Halaman (Single Page Application)",
+            "Galeri Kegiatan Komunitas",
+          ],
+          live: "https://bpicerdasramahtampan.vercel.app/",
+          repo: "#",
+        },
+        evoting: {
+          title: "Sistem E-Voting OSIS",
+          desc: "Platform voting digital yang dirancang khusus untuk pemilihan Ketua dan Wakil Ketua OSIS. Mengutamakan integritas data, anonimitas pemilih, dan efisiensi penghitungan suara.",
+          img: "project2.png",
+          tech: [
+            "JavaScript",
+            "HTML5",
+            "CSS3",
+            "Google App Script",
+            "Spreadsheet API",
+          ],
+          features: [
+            "Sistem Login Keamanan Tinggi untuk pemilih",
+            "Dashboard Hasil Real-time (Quick Count)",
+            "Panel Admin untuk manajemen kandidat",
+            "Validasi data pemilih agar tidak terjadi voting ganda",
+          ],
+          live: "#",
+          repo: "#",
+        },
+        photobooth: {
+          title: "Online Photobooth System",
+          desc: "Inovasi photobooth digital yang memungkinkan pengguna mengambil foto melalui browser dan secara otomatis menyimpannya ke penyimpanan awan dengan template desain yang cantik.",
+          img: "project3.png",
+          tech: ["JavaScript", "Webcam API", "Google Drive API", "CSS Grid"],
+          features: [
+            "Live Preview Webcam dengan filter",
+            "Timer otomatis sebelum pengambilan gambar",
+            "Integrasi otomatis dengan Google Drive",
+            "QR Code Generator untuk download softfile instan",
+          ],
+          live: "#",
+          repo: "#",
+        },
+        katalog: {
+          title: "Katalog Produk Modern",
+          desc: "Platform display produk e-commerce yang mengedepankan estetika visual. Cocok untuk UMKM yang ingin menampilkan produk mereka dengan kesan premium. Pemesanan melalui website yang akan tersambung dengan WhatsApp",
+          img: "project4.png",
+          tech: ["HTML", "CSS", "JavaScript", "Firebase"],
+          features: [
+            "Filter kategori produk",
+            "Sistem masukkan produk ke keranjang",
+            "Pemesanan melalui website yang akan tersambung ke WhatsApp",
+          ],
+          live: "https://teranacoffee.vercel.app/",
+          repo: "#",
+        },
+        login: {
+          title: "LoginPage",
+          desc: "Desain template Login Page dengan nuansa biru putih dan fitur login dan register.",
+          img: "project5A.png",
+          tech: ["HTML", "CSS", " JavaScript"],
+          features: [
+            "Halaman Login",
+            "Halaman Register",
+            "Menggunakan Transisi Togle",
+          ],
+          live: "#",
+          repo: "#",
+        },
+        mensongfess: {
+          title: "Platform Mensongfess",
+          desc: "Aplikasi pengirim pesan anonim (menfess) yang memungkinkan pengguna melampirkan lagu favorit sebagai ungkapan perasaan.",
+          img: "project6.png",
+          tech: ["JavaScript", "HTML", "Formspree", "CSS"],
+          features: [
+            "Kirim pesan anonim",
+            "Bisa kirim pakai lagu mau pun tanpa lagu",
+            "Tampilan sweet",
+          ],
+          live: "https://mensongfess9a1.vercel.app/",
+          repo: "#",
+        },
+        kasir: {
+          title: "Sistem Mesin Kasir POS",
+          desc: "Aplikasi sistem pemesanan warkop sederhana untuk menghitung total pesanan dan pembayaran di warkop.",
+          img: "project7.png",
+          tech: ["JavaScript", "Local Storage", "HTML", "CSS"],
+          features: [
+            "Hitung otomatis total pesanan",
+            "Manajemen stok barang",
+            "terdapat tanda meja jika belum bayar",
+          ],
+          live: "#",
+          repo: "#",
+        },
+        umkm: {
+          title: "Website katalog menu",
+          desc: "Aplikasi sistem pemesanan cafe sederhana.",
+          img: "project8.png",
+          tech: ["JavaScript", "Local Storage", "HTML", "CSS"],
+          features: [
+            "Hitung otomatis total pesanan",
+            "Manajemen stok barang",
+            "Pesan melalui WhatsApp",
+          ],
+          live: "#",
+          repo: "#",
+        },
+        "internal-osis": {
+          title: "Dashboard Internal OSIS",
+          desc: "Sistem manajemen organisasi khusus untuk pengurus OSIS dalam mengelola program kerja dan data anggota.",
+          img: "project9.png",
+          tech: ["JavaScript", "TypeScript", "CSS"],
+          features: [
+            "Update program kerja",
+            "Absensi rapat digital",
+            "Database pengurus",
+          ],
+          live: "#",
+          repo: "#",
+        },
+        "katalog-rumah": {
+          title: "LandingPage Katalog Rumah",
+          desc: "Katalog rumah dengan spesifikasi yang ingin di jual.",
+          img: "project10.png",
+          tech: ["JavaScript", "HTML", "CSS"],
+          features: ["Infografis", "WAME", "Tercantum Harga"],
+          live: "#",
+          repo: "#",
+        },
+        "web-kelas": {
+          title: "Website Dokumentasi Kelas",
+          desc: "Wadah digital untuk menyimpan kenangan, jadwal, dan struktur organisasi kelas dalam satu tempat.",
+          img: "project11.png",
+          tech: ["HTML", "CSS", "JavaScript", "AOS Animation"],
+          features: [
+            "Biodata siswa",
+            "Galeri foto Siswa",
+            "Jadwal piket",
+            "Laporan Uang Kas",
+          ],
+          live: "https://kelas9a1.vercel.app/",
+          repo: "#",
+        },
+        todo: {
+          title: "Website Dokumentasi Kelas",
+          desc: "Aplikasi to-do list untuk mengatur produktivitas dengan fitur ceklis dan hapus tugas.",
+          img: "project12.png",
+          tech: ["HTML", "CSS", "JavaScript"],
+          features: ["Tambah project", "Tanggal", "Deskripsi tugas"],
+          live: "#",
+          repo: "#",
+        },
+        landpro: {
+          title: "Penjualan rumah",
+          desc: "Halaman promosi real estate yang modern untuk meningkatkan konversi penjualan rumah.",
+          img: "project14.png",
+          tech: ["HTML", "CSS", "JavaScript"],
+          features: ["Infografis", "Harga", "WAME"],
+          live: "#",
+          repo: "#",
+        },
+        eksternal: {
+          title: "Website Eksternal OSISBEST SMPIP Baitul Maal",
+          desc: "Halaman Website informasi kegiatan OSIS bagi masyarakat luar sekolah dan calon siswa baru.",
+          img: "project15.png",
+          tech: ["JavaScript", "TypeScript", "CSS"],
+          features: ["Infografis", "Jadwal Event", "Struktur OSIS"],
+          live: "https://bestsmpipbaitulmaal.vercel.app/",
+          repo: "#",
+        },
+        ekspedisi: {
+          title: "EKSPEDISI MALANG",
+          desc: "Halaman Dokumentasi serta jurnal penjelasan kegiatan salah satu program di salah satu SMP.",
+          img: "project16.png",
+          tech: ["JavaScript", "HTML", "CSS"],
+          features: ["Infografis", "Jadwal Event", "Struktur OSIS"],
+          live: "https://syamilmuhammadaulia-glitch.github.io/RT03Ekspedisi/",
+          repo: "#",
+        },
+      };
+
+      // Logika untuk mengambil ID dari URL
+      const params = new URLSearchParams(window.location.search);
+      const projectId = params.get("id");
+      const data = projectData[projectId];
+
+      const detailContainer = document.querySelector(".detail-container");
+
+      if (data) {
+        // Isi data ke elemen
+        document.getElementById("proj-title").innerText = data.title;
+        document.getElementById("proj-desc").innerText = data.desc;
+        document.getElementById("proj-img").src = data.img;
+        document.getElementById("proj-live").href = data.live;
+        document.getElementById("proj-repo").href = data.repo;
+
+        // Render Badge Teknologi
+        const techContainer = document.getElementById("proj-tech");
+        data.tech.forEach((t) => {
+          techContainer.innerHTML += `<span class="tech-badge">${t}</span>`;
+        });
+
+        // Render Daftar Fitur
+        const featContainer = document.getElementById("proj-features");
+        data.features.forEach((f) => {
+          featContainer.innerHTML += `<li><i class="fa-solid fa-circle-check"></i> ${f}</li>`;
+        });
+      } else {
+        // Jika ID tidak ditemukan
+        detailContainer.innerHTML = `
+          <div style="text-align: center; grid-column: 1 / -1; padding: 5rem 0;">
+            <h2 style="font-size: 3rem; color: white; margin-bottom: 2rem;">Ups! Proyek Tidak Ditemukan</h2>
+            <p style="font-size: 1.6rem; color: #ccc; margin-bottom: 3rem;">Data proyek yang Anda cari mungkin telah dipindahkan atau dihapus.</p>
+            <a href="projects.html" class="btn">Kembali ke Daftar Proyek</a>
+          </div>`;
+      }
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+      // Jalankan AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Projects | Syamil Muhammad Aulia</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      /* Style Tambahan untuk Halaman Proyek */
+      .projects-section {
+        padding: 12rem 9% 5rem;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        margin-top: 4rem;
+      }
+      .project-card {
+        background: var(--second-bg-color);
+        border-radius: 2rem;
+        border: 2px solid transparent;
+        overflow: hidden;
+        transition: 0.4s;
+      }
+      .project-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--main-color);
+        box-shadow: 0 0 20px rgba(183, 75, 75, 0.2);
+      }
+      .project-img-box {
+        width: 100%;
+        height: 200px;
+        background: #222;
+        overflow: hidden;
+      }
+      .project-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .project-info {
+        padding: 2rem;
+      }
+      .project-info h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .project-info p {
+        font-size: 1.4rem;
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        height: 4.5rem;
+        display: -webkit-box;
+        display: box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+        overflow: hidden;
+      }
+      .card-btns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .btn-detail {
+        padding: 0.8rem 1.5rem;
+        background: #1a1a1a;
+        color: white;
+        border-radius: 0.8rem;
+        font-size: 1.3rem;
+        transition: 0.3s;
+      }
+      .btn-detail:hover {
+        background: var(--main-color);
+      }
+      .live-link {
+        color: var(--main-color);
+        font-size: 1.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-transition"></div>
+    <header>
+      <a href="#" class="logo">SYAMIL</a>
+      <i class="fa-solid fa-bars" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#services">Service</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="projects.html" class="active">Projects</a>
+      </nav>
+    </header>
+
+    <section class="projects-section">
+      <h2 class="heading" data-aos="fade-down">My <span>Web Projects</span></h2>
+
+      <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img-box">
+            <img src="project1.png" alt="BPI Profile" />
+          </div>
+          <div class="project-info">
+            <h3>Organisasi BPI</h3>
+            <p>
+              Website profil untuk mengenalkan nama kelompok serta filosofinya,
+              dan struktur suatu BPI sekolah.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=bpi" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img-box">
+            <img src="projectA1.png" alt="BPI Profile" />
+          </div>
+          <div class="project-info">
+            <h3>Organisasi BPI</h3>
+            <p>
+              Website profil untuk mengenalkan nama kelompok serta filosofinya,
+              dan struktur suatu BPI sekolah.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=bpi2" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-img-box">
+            <img src="projectA2.png" alt="BPI Profile" />
+          </div>
+          <div class="project-info">
+            <h3>Organisasi BPI</h3>
+            <p>
+              Website profil untuk mengenalkan nama kelompok serta filosofinya,
+              dan struktur suatu BPI sekolah.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=bpi3" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img-box">
+            <img src="project2.png" alt="evoting" />
+          </div>
+          <div class="project-info">
+            <h3>Sistem E-Voting</h3>
+            <p>
+              Aplikasi sistem E-Voting ketua OSIS dan Wakil Ketua OSIS melalui
+              platform Digital.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=evoting" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img-box">
+            <img src="project3.png" alt="Formulir" />
+          </div>
+          <div class="project-info">
+            <h3>Sistem Photobooth Online</h3>
+            <p>
+              Sistem Photobooth online menggunakan webcam laptop maupun
+              perangkat kamera yang tersambung.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=photobooth" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-img-box">
+            <img src="project4.png" alt="Katalog" />
+          </div>
+          <div class="project-info">
+            <h3>Katalog Produk</h3>
+            <p>
+              Display produk interaktif dengan kategori dan detail harga yang
+              responsif (Terana Coffee).
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=katalog" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img-box">
+            <img src="project5.png" alt="LoginPage" />
+          </div>
+          <div class="project-info">
+            <h3>Desain LoginPage</h3>
+            <p>
+              Desain Login Page dengan nuansa biru putih dan fitur login dan
+              register.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=login" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img-box">
+            <img src="project6.png" alt="Mensongfess" />
+          </div>
+          <div class="project-info">
+            <h3>Mensongfess</h3>
+            <p>
+              Platform pengiriman pesan anonim untuk berbagi perasaan atau lagu
+              favorit secara online.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=mensongfess" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img-box">
+            <img src="project7.png" alt="Kasir" />
+          </div>
+          <div class="project-info">
+            <h3>Mesin Kasir WarKop</h3>
+            <p>
+              Aplikasi sistem pemesanan warkop sederhana untuk menghitung total
+              pesanan dan pembayaran di warkop.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=kasir" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img-box">
+            <img src="project8.png" alt="UMKM" />
+          </div>
+          <div class="project-info">
+            <h3>Katalog UMKM</h3>
+            <p>
+              Digitalisasi produk lokal untuk membantu promosi pelaku usaha
+              kecil menengah restauran.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=umkm" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img-box">
+            <img src="project9.png" alt="OSIS Internal" />
+          </div>
+          <div class="project-info">
+            <h3>Portal Internal OSIS</h3>
+            <p>
+              Dashboard manajemen untuk internal pengurus OSIS dalam mengelola
+              agenda dan rapat.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=internal-osis" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img-box">
+            <img src="project10.png" alt="Properti" />
+          </div>
+          <div class="project-info">
+            <h3>Katalog Properti</h3>
+            <p>
+              Website listing rumah dengan fitur filter harga dan spesifikasi
+              bangunan lengkap.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=katalog-rumah" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img-box">
+            <img src="project11.png" alt="Kelas" />
+          </div>
+          <div class="project-info">
+            <h3>Website Kelas</h3>
+            <p>
+              Wadah dokumentasi kebersamaan kelas, jadwal piket, dan struktur
+              organisasi kelas.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=web-kelas" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img-box">
+            <img src="project12.png" alt="Todo" />
+          </div>
+          <div class="project-info">
+            <h3>ToDoList</h3>
+            <p>
+              Aplikasi to-do list untuk mengatur produktivitas dengan fitur
+              ceklis dan hapus tugas.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=todo" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img-box">
+            <img src="project14.png" alt="Landing Page" />
+          </div>
+          <div class="project-info">
+            <h3>Landing Page Properti</h3>
+            <p>
+              Halaman promosi real estate yang modern untuk meningkatkan
+              konversi penjualan rumah.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=landpro" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img-box">
+            <img src="project15.png" alt="OSIS Eksternal" />
+          </div>
+          <div class="project-info">
+            <h3>WEBSITE EKSTERNAL OSIS SMPIP BAITULMAAL</h3>
+            <p>
+              Website informasi kegiatan OSIS bagi masyarakat luar sekolah dan
+              calon siswa baru.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=eksternal" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img-box">
+            <img src="project16.png" alt="Ekspedisi" />
+          </div>
+          <div class="project-info">
+            <h3>Dokumentasi Ekspedisi</h3>
+            <p>
+              Sistem pengarsipan foto dan laporan kegiatan ekspedisi sekolah
+              secara digital.
+            </p>
+            <div class="card-btns">
+              <a href="project-detail.html?id=ekspedisi" class="btn-detail"
+                >Details <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#" class="live-link"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      style="
+        text-align: center;
+        padding: 2rem;
+        background: var(--second-bg-color);
+        font-size: 1.4rem;
+      "
+    >
+      &copy; 2026 Syamil Muhammad Aulia. All Rights Reserved.
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+      // Inisialisasi AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+    </script>
+  </body>
+</html>

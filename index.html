@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio | Syamil Muhammad Aulia</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="page-transition"></div>
+
+    <header>
+      <a href="#" class="logo">SYAMIL</a>
+
+      <i class="fa-solid fa-bars" id="menu-icon"></i>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#services">Service</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-content" data-aos="fade-right" data-aos-duration="1000">
+        <h1>Hi, It's <span>Syamil Muhammad Aulia</span></h1>
+        <h3 class="typing-text">I'm a <span class="multiple-text"></span></h3>
+        <p>
+          Saya adalah seorang murid SMP dan Frontend Developer pemula yang
+          sedang bersemangat mempelajari dunia pengembangan web. Berusaha
+          memberikan solusi digital kreatif di setiap baris kode.
+        </p>
+        <div class="social-icons">
+          <a href="https://instagram.com/syamiiiiiiiiiil" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://tiktok.com/@syamiiiiiiiiiil" target="_blank"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a href="https://github.com/" target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </div>
+        <div class="btn-group">
+          <a href="https://wa.me/628996023111" class="btn">Contact Me</a>
+          <a href="projects.html" class="btn-outline">View Projects</a>
+        </div>
+      </div>
+      <div class="home-img" data-aos="zoom-in" data-aos-duration="1000">
+        <img src="syamil.jpeg" alt="Syamil Profile" />
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <h2 class="heading" data-aos="fade-down">My <span>Services</span></h2>
+      <div class="services-container">
+        <div class="services-box" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-code"></i>
+          <h3>Development</h3>
+          <p>VS Code, Google Sites, & Google Apps Script.</p>
+        </div>
+        <div class="services-box" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-robot"></i>
+          <h3>AI Power</h3>
+          <p>Optimasi kode & ide menggunakan Gemini AI & ChatGPT.</p>
+        </div>
+        <div class="services-box" data-aos="fade-up" data-aos-delay="500">
+          <i class="fa-solid fa-database"></i>
+          <h3>Database</h3>
+          <p>Firebase, Supabase, & Google Spreadsheet (DB).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="education" id="education">
+      <h2 class="heading" data-aos="fade-down">
+        Riwayat <span>Pendidikan</span>
+      </h2>
+      <div class="education-row">
+        <div
+          class="education-card"
+          data-aos="flip-left"
+          data-aos-delay="100"
+          onclick="
+            openModal(
+              'RA Baitul Maal',
+              'Fase awal pendidikan saya yang berfokus pada pembentukan karakter dasar, pengenalan nilai-nilai agama Islam, dan sosialisasi dini.',
+            )
+          "
+        >
+          <i class="fa-solid fa-graduation-cap"></i>
+          <h3>RA Baitul Maal</h3>
+          <p>Klik untuk detail</p>
+        </div>
+        <div
+          class="education-card"
+          data-aos="flip-left"
+          data-aos-delay="300"
+          onclick="
+            openModal(
+              'SD Islam Plus Baitul Maal',
+              'Menempuh pendidikan dasar dengan fokus pada integrasi nilai keislaman dan akademik. Di sini saya mulai aktif dalam berbagai kegiatan sekolah.',
+            )
+          "
+        >
+          <i class="fa-solid fa-school"></i>
+          <h3>SD Islam Plus Baitul Maal</h3>
+          <p>Klik untuk detail</p>
+        </div>
+        <div
+          class="education-card"
+          data-aos="flip-left"
+          data-aos-delay="500"
+          onclick="
+            openModal(
+              'SMP Islam Plus Baitul Maal',
+              'Saat ini saya aktif sebagai siswa kelas menengah, mengasah kemampuan IT dan kepemimpinan melalui organisasi sekolah.',
+            )
+          "
+        >
+          <i class="fa-solid fa-building-columns"></i>
+          <h3>SMP Islam Plus Baitul Maal</h3>
+          <span class="status-badge">Sekarang</span>
+          <p>Klik untuk detail</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <h2 class="heading" data-aos="fade-down">
+        Experience & <span>Achievements</span>
+      </h2>
+      <div class="experience-row">
+        <div class="experience-column" data-aos="fade-right">
+          <h3 class="title">
+            <i class="fa-solid fa-users"></i> Pengalaman Organisasi
+          </h3>
+          <div class="cards-container">
+            <div
+              class="experience-card"
+              onclick="
+                openModal(
+                  'Ketua OSIS',
+                  'Bertanggung jawab memimpin seluruh pengurus OSIS, merancang program kerja sekolah, dan menjadi jembatan antara siswa dan guru (Periode 2024-2025).',
+                )
+              "
+            >
+              <span class="year">2024 - 2025</span>
+              <h3>Ketua OSIS</h3>
+              <p>Klik untuk detail</p>
+            </div>
+            <div
+              class="experience-card"
+              onclick="
+                openModal(
+                  'Staf Bidang Pendidikan',
+                  'Bertugas dalam mengelola kegiatan sekolah yang berkaitan dengan edukasi, perlombaan akademik, dan pengembangan bakat siswa.',
+                )
+              "
+            >
+              <span class="year">2023 - 2024</span>
+              <h3>Staf Bidang Pendidikan</h3>
+              <p>Klik untuk detail</p>
+            </div>
+            <div
+              class="experience-card"
+              onclick="
+                openModal(
+                  'Ketua Divisi Acara MPLS',
+                  'Mengatur seluruh konsep dan jalannya acara Masa Pengenalan Lingkungan Sekolah (MPLS) untuk menyambut siswa baru.',
+                )
+              "
+            >
+              <span class="year">2024</span>
+              <h3>Ketua Divisi Acara</h3>
+              <p>Klik untuk detail</p>
+            </div>
+            <div
+              class="experience-card"
+              onclick="
+                openModal(
+                  'Anggota Divisi Acara',
+                  'Membantu persiapan teknis dan pelaksanaan berbagai acara sekolah untuk memastikan kegiatan berjalan lancar.',
+                )
+              "
+            >
+              <span class="year">2025</span>
+              <h3>Anggota Divisi Acara</h3>
+              <p>Klik untuk detail</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-column" data-aos="fade-left">
+          <h3 class="title">
+            <i class="fa-solid fa-trophy"></i> Riwayat Prestasi
+          </h3>
+          <div class="cards-container">
+            <div
+              class="experience-card"
+              onclick="
+                openModal(
+                  'Multiple Awards',
+                  'Penghargaan borongan sebagai Best Actor, Movie, & Director pada HifFest 2025.',
+                )
+              "
+            >
+              <span class="badge highlight">Multiple Awards</span>
+              <h3>Best Actor, Movie, & Director</h3>
+              <p>Klik untuk detail</p>
+            </div>
+            <div
+              class="experience-card"
+              onclick="
+                openModal(
+                  'Juara Umum 1 Panahan',
+                  'Meraih prestasi tertinggi dalam kategori 10 Meter pada perayaan HUT RI Ke-78 oleh Hiwayah Archery Club.',
+                )
+              "
+            >
+              <span class="badge">Juara Umum 1</span>
+              <h3>Lomba Panahan 10 Meter</h3>
+              <p>Klik untuk detail</p>
+            </div>
+            <div
+              class="experience-card"
+              onclick="
+                openModal(
+                  'Juara 1 Lomba Short Movie',
+                  'Memenangkan juara pertama dalam ajang PORSSITEQU 2024 melalui karya film pendek kreatif.',
+                )
+              "
+            >
+              <span class="badge">Juara 1</span>
+              <h3>Lomba Short Movie</h3>
+              <p>Klik untuk detail</p>
+            </div>
+            <div
+              class="experience-card"
+              onclick="
+                openModal(
+                  'HifFest 2025 Awards',
+                  'Penghargaan borongan atas kontribusi luar biasa sebagai Aktor Terbaik, Sutradara, Penulis Naskah, dan Film Terbaik.',
+                )
+              "
+            >
+              <span class="badge">Juara Umum 2</span>
+              <h3>Lomba Short Movie Festival Film</h3>
+              <p>Klik untuk detail</p>
+            </div>
+            <div
+              class="experience-card"
+              onclick="
+                openModal(
+                  'Juara 2 Lomba Short Movie',
+                  'Memenangkan juara kedua dalam ajang Festival Film Sekolah Cikal 2024.',
+                )
+              "
+            >
+              <span class="badge">Juara Umum 3</span>
+              <h3>Lomba Short Movie Festival Film</h3>
+              <p>Klik untuk detail</p>
+            </div>
+            <div
+              class="experience-card"
+              onclick="
+                openModal(
+                  'Juara 3 Barebow 15m',
+                  'Meraih peringkat ketiga dalam kompetisi panahan Barebow tingkat regional JSIT Banten pada PORSSITEQU 2024.',
+                )
+              "
+            >
+              <span class="badge">Juara 3</span>
+              <h3>Panahan Barebow 15m</h3>
+              <p>Klik untuk detail</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="infoModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Judul Detail</h2>
+        <hr />
+        <p id="modalDescription">Deskripsi lengkap akan muncul di sini.</p>
+      </div>
+    </div>
+
+    <section class="contact-section" id="contact">
+      <h2 class="heading" data-aos="fade-down">Hubungi <span>Saya</span></h2>
+      <p class="sub-heading" data-aos="fade-up">
+        Punya pertanyaan? Kirimi saya pesan atau tinggalkan jejak di kolom
+        komentar.
+      </p>
+
+      <div class="contact-wrapper">
+        <div class="contact-left" data-aos="fade-right">
+          <div class="contact-card">
+            <h3>Kirim Pesan</h3>
+            <form
+              action="https://formsubmit.co/syamilmuhammadaulia@gmail.com"
+              method="POST"
+            >
+              <input type="hidden" name="_captcha" value="false" />
+              <div class="input-box">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nama Anda"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Anda"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <textarea
+                  name="message"
+                  placeholder="Pesan Anda"
+                  cols="30"
+                  rows="10"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn">Kirim Pesan</button>
+            </form>
+          </div>
+
+          <div class="social-connect">
+            <h3>Connect With Me</h3>
+            <div class="social-grid">
+              <a
+                href="https://instagram.com/syamiiiiiiiiiil"
+                target="_blank"
+                class="social-item"
+              >
+                <div class="icon-box">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="social-text">
+                  <span>Instagram</span>
+                  <small>Follow me</small>
+                </div>
+              </a>
+              <a
+                href="https://tiktok.com/@syamiiiiiiiiiil"
+                target="_blank"
+                class="social-item"
+              >
+                <div class="icon-box"><i class="fa-brands fa-tiktok"></i></div>
+                <div class="social-text">
+                  <span>TikTok</span>
+                  <small>Follow me</small>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment-right" data-aos="fade-left">
+          <div class="comment-card">
+            <h3>Comments (<span id="comment-count">0</span>)</h3>
+            <div class="comment-form">
+              <input
+                type="text"
+                id="cmt-name"
+                placeholder="Nama Anda"
+                autocomplete="off"
+              />
+              <textarea
+                id="cmt-msg"
+                placeholder="Tulis komentar di sini..."
+                rows="3"
+              ></textarea>
+              <button id="btn-post" class="btn-comment">
+                Post Comment <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+            <div class="comment-list" id="comment-list">
+              <p class="empty-state">
+                Belum ada komentar. Jadilah yang pertama!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-text">
+        <p>
+          Copyright &copy; 2025 by Syamil Muhammad Aulia | All Rights Reserved.
+        </p>
+      </div>
+      <div class="footer-iconTop">
+        <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        push,
+        onValue,
+      } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAwGy6yxqGw-1En7ndruLat9HiS__VeOYE",
+        authDomain: "commentsporto.firebaseapp.com",
+        databaseURL:
+          "https://commentsporto-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "commentsporto",
+        storageBucket: "commentsporto.firebasestorage.app",
+        messagingSenderId: "1021273939685",
+        appId: "1:1021273939685:web:cb493a15223b0b94307e0c",
+        measurementId: "G-LLWZMV0TWP",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      const nameInput = document.getElementById("cmt-name");
+      const msgInput = document.getElementById("cmt-msg");
+      const postBtn = document.getElementById("btn-post");
+      const commentList = document.getElementById("comment-list");
+      const countSpan = document.getElementById("comment-count");
+
+      postBtn.addEventListener("click", () => {
+        const name = nameInput.value.trim();
+        const message = msgInput.value.trim();
+        if (name && message) {
+          push(ref(db, "comments"), {
+            username: name,
+            text: message,
+            timestamp: Date.now(),
+          }).then(() => {
+            nameInput.value = "";
+            msgInput.value = "";
+          });
+        } else {
+          alert("Isi nama dan pesan!");
+        }
+      });
+
+      onValue(ref(db, "comments"), (snapshot) => {
+        commentList.innerHTML = "";
+        const data = snapshot.val();
+        if (data) {
+          const values = Object.values(data);
+          countSpan.innerText = values.length;
+          values.reverse().forEach((cmt) => {
+            const date = new Date(cmt.timestamp).toLocaleString();
+            commentList.innerHTML += `
+              <div class="comment-item" style="background:#1a1a1a; padding:1.5rem; border-radius:1rem; margin-bottom:1rem; border-left:3px solid var(--main-color);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+                  <strong style="color:var(--main-color); font-size:1.4rem;">${cmt.username}</strong>
+                  <small style="color:#777;">${date}</small>
+                </div>
+                <p style="color:#ddd; font-size:1.3rem;">${cmt.text}</p>
+              </div>`;
+          });
+        }
+      });
+    </script>
+
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 200,
+      });
+    </script>
+  </body>
+</html>
