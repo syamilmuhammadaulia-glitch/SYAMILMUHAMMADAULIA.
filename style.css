@@ -31,10 +31,10 @@ body {
   line-height: 1.6;
 }
 
-/* --- SECTIONS SPACING (Disesuaikan agar tidak terlalu jauh) --- */
+/* --- SECTIONS SPACING --- */
 section {
-  min-height: auto; /* Mengubah dari 100vh agar jarak antar konten lebih rapat */
-  padding: 8rem 9% 4rem; /* Padding atas dikurangi dari 12rem ke 8rem */
+  min-height: auto;
+  padding: 8rem 9% 4rem;
 }
 
 /* --- HEADER & NAVBAR --- */
@@ -93,6 +93,11 @@ header {
   line-height: 1.3;
 }
 
+.home-content h1 span {
+  color: var(--main-color);
+  text-shadow: 0 0 10px rgba(183, 75, 75, 0.3);
+}
+
 .home-content h3 {
   font-size: 3.2rem;
   margin-bottom: 2rem;
@@ -111,10 +116,31 @@ header {
   box-shadow: 0 0 25px var(--main-color);
   object-fit: cover;
 }
-.home-content h1 span {
-  color: var(--main-color); /* Nama kamu jadi Merah Marun */
-  text-shadow: 0 0 10px rgba(183, 75, 75, 0.3); /* Memberikan efek glow tipis */
+
+/* --- TYPING TEXT STYLES --- */
+.multiple-text {
+  color: var(--main-color);
 }
+
+.typed-cursor {
+  color: var(--main-color);
+  font-size: 3rem;
+  opacity: 1;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* --- GENERAL BUTTONS --- */
 .btn,
 .btn-outline {
@@ -183,7 +209,7 @@ header {
   margin-bottom: 2rem;
 }
 
-/* --- EXPERIENCE & ACHIEVEMENTS (Font Enlarged) --- */
+/* --- EXPERIENCE & ACHIEVEMENTS --- */
 .experience-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -191,7 +217,7 @@ header {
 }
 
 .experience-column .title {
-  font-size: 2.8rem; /* Ukuran font judul kolom diperbesar */
+  font-size: 2.8rem;
   margin-bottom: 3rem;
   display: flex;
   align-items: center;
@@ -214,13 +240,13 @@ header {
 }
 
 .experience-card h3 {
-  font-size: 2.2rem; /* Ukuran font kartu diperbesar */
+  font-size: 2.2rem;
   color: var(--main-color);
   margin: 1rem 0;
 }
 
 .experience-card p {
-  font-size: 1.5rem; /* Ukuran font deskripsi diperbesar */
+  font-size: 1.5rem;
   color: #ccc;
 }
 
@@ -238,6 +264,68 @@ header {
   font-weight: 700;
 }
 
+/* --- MODAL POP-UP --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+.modal-content {
+  background-color: var(--second-bg-color);
+  padding: 4rem;
+  border-radius: 2.5rem;
+  width: 90%;
+  max-width: 550px;
+  position: relative;
+  border: 2px solid var(--main-color);
+  box-shadow: 0 0 30px rgba(183, 75, 75, 0.3);
+  animation: modalMuncul 0.4s ease;
+}
+
+@keyframes modalMuncul {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  font-size: 4rem;
+  color: var(--main-color);
+  cursor: pointer;
+  line-height: 1;
+}
+
+#modalTitle {
+  font-size: 2.8rem;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 1rem;
+}
+
+#modalDescription {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #ddd;
+}
+
 /* --- CONTACT & COMMENTS SECTION --- */
 .sub-heading {
   text-align: center;
@@ -249,7 +337,7 @@ header {
 
 .contact-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Layout dua kolom: Kiri (Form) & Kanan (Komentar) */
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -301,7 +389,6 @@ header {
   box-shadow: 0 0 10px rgba(183, 75, 75, 0.2);
 }
 
-/* UPGRADE TOMBOL KIRIM PESAN */
 .contact-card .btn {
   width: 100%;
   height: 5.5rem;
@@ -322,7 +409,6 @@ header {
   box-shadow: 0 8px 25px rgba(183, 75, 75, 0.5);
 }
 
-/* SOCIAL CONNECT IN CONTACT */
 .social-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -343,10 +429,10 @@ header {
   background: #1a1a1a;
   transform: scale(1.03);
 }
-/* --- SOCIAL ICONS HOME --- */
+
 .social-icons {
   display: flex;
-  gap: 2rem; /* Memberi jarak antar ikon */
+  gap: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -368,7 +454,7 @@ header {
   background: var(--main-color);
   color: white;
   box-shadow: 0 0 1.5rem var(--main-color);
-  transform: translateY(-5px); /* Efek melompat kecil saat di-hover */
+  transform: translateY(-5px);
 }
 
 .icon-box {
@@ -419,6 +505,24 @@ header {
   padding-right: 1rem;
 }
 
+/* --- PAGE TRANSITION --- */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.page-transition.fade-in {
+  opacity: 0;
+}
+
 /* --- FOOTER --- */
 .footer {
   display: flex;
@@ -447,18 +551,23 @@ header {
   box-shadow: 0 0 1rem var(--main-color);
 }
 
-/* --- RESPONSIVE --- */
+/* =========================================
+   RESPONSIVE DESIGN / MEDIA QUERIES
+   (Disusun urut dari layar besar ke kecil)
+   ========================================= */
+
+/* --- Tablet & Layar Menengah (< 991px) --- */
 @media (max-width: 991px) {
   .contact-wrapper,
   .experience-row {
     grid-template-columns: 1fr;
   }
-  /* --- TAMBAHAN KODE UNTUK MERAPIKAN MENU MOBILE --- */
+
   .navbar a {
-    display: block; /* Membuat menu turun ke bawah (tidak berjejer) */
+    display: block;
     font-size: 2rem;
-    margin: 2.5rem 0; /* Memberikan jarak atas-bawah, menghapus jarak kiri-kanan */
-    text-align: center; /* Membuat teks menu berada tepat di tengah */
+    margin: 2.5rem 0;
+    text-align: center;
   }
 
   .home {
@@ -472,10 +581,12 @@ header {
   }
 }
 
+/* --- Layar HP Normal (< 768px) --- */
 @media (max-width: 768px) {
   #menu-icon {
     display: block;
   }
+
   .navbar {
     position: absolute;
     top: 100%;
@@ -484,177 +595,72 @@ header {
     padding: 1rem 4%;
     background: var(--bg-color);
     display: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
   }
+
   .navbar.active {
     display: block;
   }
+
   .home {
     flex-direction: column-reverse;
     text-align: center;
   }
+
   .home-img img {
     width: 60vw;
     height: 60vw;
   }
 }
-/* --- MODAL POP-UP (WAJIB ADA UNTUK JS) --- */
-.modal {
-  display: none; /* Awalnya disembunyikan */
-  position: fixed;
-  z-index: 9999; /* Pastikan di atas elemen AOS */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* Latar hitam transparan */
-  align-items: center; /* Pusatkan Vertikal */
-  justify-content: center; /* Pusatkan Horizontal */
-  backdrop-filter: blur(8px); /* Efek blur di belakang pop-up */
-}
 
-.modal-content {
-  background-color: var(--second-bg-color);
-  padding: 4rem;
-  border-radius: 2.5rem;
-  width: 90%;
-  max-width: 550px;
-  position: relative;
-  border: 2px solid var(--main-color);
-  box-shadow: 0 0 30px rgba(183, 75, 75, 0.3);
-  animation: modalMuncul 0.4s ease; /* Animasi zoom */
-}
-
-/* Animasi masuk modal */
-@keyframes modalMuncul {
-  from {
-    transform: scale(0.7);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.close-btn {
-  position: absolute;
-  top: 2rem;
-  right: 2.5rem;
-  font-size: 4rem;
-  color: var(--main-color);
-  cursor: pointer;
-  line-height: 1;
-}
-
-#modalTitle {
-  font-size: 2.8rem;
-  color: var(--main-color);
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #333;
-  padding-bottom: 1rem;
-}
-
-#modalDescription {
-  font-size: 1.6rem;
-  line-height: 1.8;
-  color: #ddd;
-}
-
-/* --- PAGE TRANSITION (Tambahan untuk script.js kamu) --- */
-.page-transition {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--bg-color);
-  z-index: 10000;
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-
-.page-transition.fade-in {
-  opacity: 0;
-}
-/* --- TYPING TEXT STYLES --- */
-.multiple-text {
-  color: var(--main-color); /* Membuat teks yang berubah jadi Merah Marun */
-}
-
-/* Mengatur kursor pengetikan agar berkedip merah */
-.typed-cursor {
-  color: var(--main-color);
-  font-size: 3rem;
-  opacity: 1;
-  animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/* =========================================
-   5. MOBILE RESPONSIVE KHUSUS LAYAR KECIL (< 450px)
-   ========================================= */
+/* --- Layar HP Kecil (< 450px) --- */
 @media (max-width: 450px) {
-  /* Mengecilkan skala root font agar semua ukuran 'rem' otomatis mengecil */
   html {
-    font-size: 50%; /* 1rem menjadi 8px di HP */
+    font-size: 50%;
   }
 
-  /* Mengurangi padding kiri-kanan agar konten lebih lega di HP */
   section {
     padding: 6rem 5% 3rem;
   }
 
-  /* Penyesuaian area Home */
   .home {
     padding-top: 10rem;
     gap: 2.5rem;
   }
 
   .home-img img {
-    width: 70vw; /* Gambar sedikit lebih besar proporsinya di HP */
+    width: 70vw;
     height: 70vw;
   }
 
   .home-content h1 {
-    font-size: 4.5rem; /* Memperkecil H1 dari 5.6rem */
+    font-size: 4.5rem;
   }
 
   .home-content h3 {
     font-size: 2.5rem;
   }
 
-  /* Merapikan grid agar tidak mentok di HP yang sangat kecil */
   .services-container,
   .education-row {
-    grid-template-columns: 1fr; /* Memaksa 1 kolom di HP, mengabaikan minmax(300px) */
+    grid-template-columns: 1fr;
   }
 
-  /* Merapikan Form Kontak dan Komentar */
   .contact-wrapper {
     gap: 3rem;
   }
 
   .contact-card,
   .comment-card {
-    padding: 2.5rem; /* Padding kotak form diperkecil */
+    padding: 2.5rem;
   }
 
   .social-grid {
-    grid-template-columns: 1fr; /* Sosial media menjadi 1 baris ke bawah */
+    grid-template-columns: 1fr;
   }
 
-  /* Merapikan Modal Pop-up */
   .modal-content {
     padding: 2.5rem 2rem;
     width: 95%;
@@ -663,22 +669,5 @@ header {
   .close-btn {
     top: 1.5rem;
     right: 2rem;
-  }
-}
-/* Cari bagian ini di style.css kamu dan tambahkan border/shadow */
-@media (max-width: 768px) {
-  .navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 1rem 4%;
-    background: var(--bg-color);
-    display: none;
-
-    /* -- Tambahkan 3 baris ini -- */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
   }
 }
