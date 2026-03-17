@@ -453,6 +453,23 @@ header {
   .experience-row {
     grid-template-columns: 1fr;
   }
+  /* --- TAMBAHAN KODE UNTUK MERAPIKAN MENU MOBILE --- */
+  .navbar a {
+    display: block; /* Membuat menu turun ke bawah (tidak berjejer) */
+    font-size: 2rem;
+    margin: 2.5rem 0; /* Memberikan jarak atas-bawah, menghapus jarak kiri-kanan */
+    text-align: center; /* Membuat teks menu berada tepat di tengah */
+  }
+
+  .home {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .home-img img {
+    width: 60vw;
+    height: 60vw;
+  }
 }
 
 @media (max-width: 768px) {
@@ -582,5 +599,86 @@ header {
   }
   100% {
     opacity: 1;
+  }
+}
+/* =========================================
+   5. MOBILE RESPONSIVE KHUSUS LAYAR KECIL (< 450px)
+   ========================================= */
+@media (max-width: 450px) {
+  /* Mengecilkan skala root font agar semua ukuran 'rem' otomatis mengecil */
+  html {
+    font-size: 50%; /* 1rem menjadi 8px di HP */
+  }
+
+  /* Mengurangi padding kiri-kanan agar konten lebih lega di HP */
+  section {
+    padding: 6rem 5% 3rem;
+  }
+
+  /* Penyesuaian area Home */
+  .home {
+    padding-top: 10rem;
+    gap: 2.5rem;
+  }
+
+  .home-img img {
+    width: 70vw; /* Gambar sedikit lebih besar proporsinya di HP */
+    height: 70vw;
+  }
+
+  .home-content h1 {
+    font-size: 4.5rem; /* Memperkecil H1 dari 5.6rem */
+  }
+
+  .home-content h3 {
+    font-size: 2.5rem;
+  }
+
+  /* Merapikan grid agar tidak mentok di HP yang sangat kecil */
+  .services-container,
+  .education-row {
+    grid-template-columns: 1fr; /* Memaksa 1 kolom di HP, mengabaikan minmax(300px) */
+  }
+
+  /* Merapikan Form Kontak dan Komentar */
+  .contact-wrapper {
+    gap: 3rem;
+  }
+
+  .contact-card,
+  .comment-card {
+    padding: 2.5rem; /* Padding kotak form diperkecil */
+  }
+
+  .social-grid {
+    grid-template-columns: 1fr; /* Sosial media menjadi 1 baris ke bawah */
+  }
+
+  /* Merapikan Modal Pop-up */
+  .modal-content {
+    padding: 2.5rem 2rem;
+    width: 95%;
+  }
+
+  .close-btn {
+    top: 1.5rem;
+    right: 2rem;
+  }
+}
+/* Cari bagian ini di style.css kamu dan tambahkan border/shadow */
+@media (max-width: 768px) {
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 4%;
+    background: var(--bg-color);
+    display: none;
+
+    /* -- Tambahkan 3 baris ini -- */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
   }
 }
