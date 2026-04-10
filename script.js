@@ -4,7 +4,7 @@
 const typingElement = document.querySelector(".multiple-text");
 if (typingElement) {
   new Typed(".multiple-text", {
-    strings: ["Ketua OSIS", "Frontend Developer", "Archer", "Movie Maker"],
+    strings: ["Frontend Developer", "Archer", "Movie Maker"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
